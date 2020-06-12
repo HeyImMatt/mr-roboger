@@ -17,13 +17,21 @@ You can view it here: https://heyimmatt.github.io/mr-roboger
 
 ## BDD Specifications
 
-* If the user clicks the Count Up! button, the program returns a range of numbers from 0 to the inputted number
+* If the user clicks the Count Up! button and the number is greater than 0, the program returns a range of numbers from 0 to the inputted number
   - Input: 4
   - Output: 0, 1, 2, 3, 4
 
-* If the user clicks the Count Down! button, the program returns a range of numbers from the inputted number to 0
+* If the user clicks the Count Down! button and the number is greater than 0, the program returns a range of numbers from the inputted number to 0
   - Input: 4
   - Output: 4, 3, 2, 1, 0
+
+  * If the user clicks the Count Up! button and the number is less than 0, the program returns a range of numbers from the inputted number to 0
+  - Input: -4
+  - Output: -4, -3, -2, -1, 0
+
+* If the user clicks the Count Down! button and the number is less than 0, the program returns a range of numbers from 0 to the inputted number
+  - Input: -4
+  - Output: 0, -1, -2, -3, -4
 
 * Numbers that contain a 3 display "Won't you be my neighbor?" instead of the number
   - Input: 4
