@@ -26,9 +26,9 @@ function formHandler(event) {
 
 function validate(num, numField, name, nameField) {
   if (num > 100 || num < -100) {
-    alert('That number is too large. Keep it a hundred please, and thank you.');
+    alert('That number is too large. Keep it a hundred please and thank you.');
   } else if (!num || !name) {
-    alert('Please fill out the fields!');
+    alert('Fill them fields, please.');
     if (!num) {
       numField.classList = 'form-control is-invalid';
     } else if (!name) {
@@ -44,8 +44,10 @@ function validate(num, numField, name, nameField) {
 
 function displayResults(outputArr) {
   const outputDiv = document.getElementById('output');
+  document.getElementById('mr-roboger').hidden = false;
   outputArr.forEach((item) => {
     const outputNode = document.createElement('p');
+    outputNode.className = "text-center"
     outputNode.textContent = item;
     outputDiv.appendChild(outputNode);
   });
