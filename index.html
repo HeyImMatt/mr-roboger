@@ -4,11 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
   <script src="js/scripts.js" defer></script>
   <title>Mr. Roboger's Neighborhood</title>
 </head>
@@ -16,26 +23,22 @@
 <body>
   <div class="container">
     <h1>Welcome to Mr. Roboger's Neighborhood!</h1>
-    <form id="user-input">
-      <div class="row">
-        <div class="form-group col-sm-6">
-          <label for="num-input">Please enter a number</label>
-          <input type="number" class="form-control" id="num-input" required>
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group col-sm-6">
-          <label for="name">What's your name, friend?</label>
-          <input type="text" class="form-control" id="name" required>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
+    <div class="card col-6">
+      <div class="card-body">
+        <form id="user-input">
+          <div class="form-group">
+            <label for="num-input">Please enter a number</label>
+            <input type="number" class="form-control" id="num-input" required>
+          </div>
+          <div class="form-group">
+            <label for="name">What's your name, friend?</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
           <button class="btn btn-primary" id="ascending">Count Up!</button>
           <button class="btn btn-secondary" id="descending">Count Down!</button>
-        </div>
+        </form>
       </div>
-    </form>
+    </div>
     <br>
     <br>
     <div class="row">
