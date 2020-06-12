@@ -9,7 +9,7 @@ function formHandler(event) {
   const numField = document.getElementById('num-input');
   const nameField = document.getElementById('name');
   const num = parseInt(numField.value);
-  const name = nameField.value;
+  const name = nameField.value.trim();
   const order = event.target.id;
   const validated = validate(num, numField, name, nameField);
 
@@ -17,11 +17,12 @@ function formHandler(event) {
 
   if (validated) {
     document.getElementById('loader').hidden = false;
+    document.getElementById('mr-roboger').hidden = true;
     window.scrollTo(0, document.body.scrollHeight);
     setTimeout(() => {
       document.getElementById('loader').hidden = true;
       robogerize(num, name, order);
-    }, 3000);
+    }, 3500);
   }
 }
 
@@ -36,6 +37,8 @@ function validate(num, numField, name, nameField) {
       numField.classList = 'form-control';
       nameField.classList = 'form-control is-invalid';
     }
+  } else if (!name.match(/^[A-Za-z]+$/)) {
+    alert('Name must be letters only.');
   } else {
     numField.classList = 'form-control';
     nameField.classList = 'form-control';
@@ -52,6 +55,7 @@ function displayResults(outputArr) {
     outputNode.textContent = item;
     outputDiv.appendChild(outputNode);
   });
+  window.scrollTo(0, 600);
 }
 
 function robogerize(num, name, order) {
