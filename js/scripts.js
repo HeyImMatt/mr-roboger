@@ -1,3 +1,47 @@
+document.querySelectorAll('button').forEach((button) => {
+  button.addEventListener('click', (event) => {
+    event.preventDefault();
+    formHandler(event);
+  })
+});
+
+function formHandler(event) {
+  const numField = document.getElementById('num-input');
+  const nameField = document.getElementById('name');
+  const num = parseInt(numField.value);
+  const name = nameField.value;
+  const order = event.target.id;
+
+  document.getElementById('output').innerHTML = '';
+  
+  if (num && name) {
+    numField.classList = 'form-control';
+    nameField.classList = 'form-control';
+    document.getElementById('loader').hidden = false;
+    setTimeout(() => {
+      document.getElementById('loader').hidden = true;
+      robogerize(num, name, order);
+    }, 3000);
+  } else if (!num || !name) {
+    alert('Please fill out the fields!');
+    if (!num) {
+      numField.classList = 'form-control is-invalid';
+    } else if (!name) {
+      numField.classList = 'form-control';
+      nameField.classList = 'form-control is-invalid';
+    }
+  }
+}
+
+function displayResults(outputArr) {
+  const outputDiv = document.getElementById('output');
+  outputArr.forEach((item) => {
+    const outputNode = document.createElement('p');
+    outputNode.textContent = item;
+    outputDiv.appendChild(outputNode);
+  });
+}
+
 function robogerize(num, name, order) {
   let outputArr = [];
   if (order === 'ascending') {
@@ -33,49 +77,3 @@ function evaluateNumber(number, name) {
     return 'Beep!';
   } else return number;
 }
-
-function displayResults(outputArr) {
-  const outputDiv = document.getElementById('output');
-  outputArr.forEach((item) => {
-    const outputNode = document.createElement('p');
-    outputNode.textContent = item;
-    outputDiv.appendChild(outputNode);
-  });
-}
-
-function formHandler(event) {
-  document.getElementById('output').innerHTML = '';
-  const numField = document.getElementById('num-input');
-  const nameField = document.getElementById('name');
-  
-  const num = parseInt(numField.value);
-  const name = nameField.value;
-  const order = event.target.id;
-  console.log(order)
-  
-  if (num && name) {
-    numField.classList = 'form-control';
-    nameField.classList = 'form-control';
-    document.getElementById('loader').hidden = false;
-    setTimeout(() => {
-      document.getElementById('loader').hidden = true;
-      robogerize(num, name, order);
-    }, 4000);
-  } else if (!num || !name) {
-    alert('Please fill out the fields!');
-    if (!num) {
-      numField.classList = 'form-control is-invalid';
-    } else if (!name) {
-      numField.classList = 'form-control';
-      nameField.classList = 'form-control is-invalid';
-    }
-  }
-
-}
-
-document.querySelectorAll('button').forEach((button) => {
-  button.addEventListener('click', (event) => {
-    event.preventDefault();
-    formHandler(event);
-  })
-});
