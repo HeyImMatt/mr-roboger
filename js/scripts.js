@@ -17,6 +17,7 @@ function formHandler(event) {
 
   if (validated) {
     document.getElementById('loader').hidden = false;
+    window.scrollTo(0, document.body.scrollHeight);
     setTimeout(() => {
       document.getElementById('loader').hidden = true;
       robogerize(num, name, order);

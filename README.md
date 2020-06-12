@@ -17,6 +17,10 @@ You can view it here: https://heyimmatt.github.io/mr-roboger
 
 ## BDD Specifications
 
+* If the inputted number is greater than 100 or less than -100, site throws an alert
+  - Input: 4360
+  - Output: Please enter a number smaller than 100
+
 * If the user clicks the Count Up! button and the number is greater than 0, the program returns a range of numbers from 0 to the inputted number
   - Input: 4
   - Output: 0, 1, 2, 3, 4
