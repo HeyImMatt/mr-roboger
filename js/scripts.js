@@ -2,7 +2,7 @@ document.querySelectorAll('button').forEach((button) => {
   button.addEventListener('click', (event) => {
     event.preventDefault();
     formHandler(event);
-  })
+  });
 });
 
 function formHandler(event) {
@@ -11,17 +11,22 @@ function formHandler(event) {
   const num = parseInt(numField.value);
   const name = nameField.value;
   const order = event.target.id;
+  const validated = validate(num, numField, name, nameField);
 
   document.getElementById('output').innerHTML = '';
-  
-  if (num && name) {
-    numField.classList = 'form-control';
-    nameField.classList = 'form-control';
+
+  if (validated) {
     document.getElementById('loader').hidden = false;
     setTimeout(() => {
       document.getElementById('loader').hidden = true;
       robogerize(num, name, order);
     }, 3000);
+  }
+}
+
+function validate(num, numField, name, nameField) {
+  if (num > 100 || num < -100) {
+    alert('That number is too large. Keep it a hundred please, and thank you.');
   } else if (!num || !name) {
     alert('Please fill out the fields!');
     if (!num) {
@@ -30,6 +35,10 @@ function formHandler(event) {
       numField.classList = 'form-control';
       nameField.classList = 'form-control is-invalid';
     }
+  } else {
+    numField.classList = 'form-control';
+    nameField.classList = 'form-control';
+    return true;
   }
 }
 
