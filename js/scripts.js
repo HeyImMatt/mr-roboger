@@ -26,7 +26,11 @@ function evaluateNumber(number, name) {
 
 function displayResults(outputArr) {
   const outputDiv = document.getElementById('output');
-  outputDiv.append(`${outputArr}`);
+  outputArr.forEach(item => {
+    const outputNode = document.createElement('p');
+    outputNode.textContent = item;
+    outputDiv.appendChild(outputNode);
+  })
 }
 
 document.querySelectorAll('button').forEach((button) => {
