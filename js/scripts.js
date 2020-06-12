@@ -36,6 +36,8 @@ function displayResults(outputArr) {
 document.querySelectorAll('button').forEach((button) => {
   button.addEventListener('click', (event) => {
     event.preventDefault();
+    document.getElementById('output').innerHTML = '';
+
     const num = parseInt(document.getElementById('num-input').value);
     const name = document.getElementById('name').value;
     const order = event.target.id;
