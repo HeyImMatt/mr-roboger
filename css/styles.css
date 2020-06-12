@@ -1,9 +1,3 @@
-#header {
-  overflow: hidden;
-  animation-name: slideLeft;
-  animation-duration: 3s;
-}
-
 #the-form {
   overflow: hidden;
   animation-name: slideUp;
@@ -18,6 +12,17 @@ button {
   display: block;
   height: 100px;
   width: 150px;
+}
+
+.slide-left {
+  overflow: hidden;
+  animation-name: slideLeft;
+  animation-duration: 3s;
+}
+
+.grow {
+  animation-name: growFromCenter;
+  animation-duration: 3.5s;
 }
 
 @keyframes slideLeft {
@@ -41,5 +46,14 @@ button {
   to {
     margin-top: 0%;
     height: 100%;
+  }
+}
+
+@keyframes growFromCenter{
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
   }
 }
