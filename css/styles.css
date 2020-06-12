@@ -1,3 +1,15 @@
+#header {
+  overflow: hidden;
+  animation-name: slideLeft;
+  animation-duration: 3s;
+}
+
+#the-form {
+  overflow: hidden;
+  animation-name: slideUp;
+  animation-duration: 3s;
+}
+
 button {
   margin-bottom: 10px;
 }
@@ -6,4 +18,28 @@ button {
   display: block;
   height: 100px;
   width: 150px;
+}
+
+@keyframes slideLeft {
+  from {
+    margin-left: 100%;
+    width: 200%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    margin-top: 100%;
+    height: 300%; 
+  }
+
+  to {
+    margin-top: 0%;
+    height: 100%;
+  }
 }
