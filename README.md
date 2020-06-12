@@ -17,11 +17,11 @@ You can view it here: https://heyimmatt.github.io/mr-roboger
 
 ## BDD Specifications
 
-* If the user clicks the Ascending Order button, the program returns a range of numbers from 0 to the inputted number
+* If the user clicks the Count Up! button, the program returns a range of numbers from 0 to the inputted number
   - Input: 4
   - Output: 0, 1, 2, 3, 4
 
-* If the user clicks the Descending Order button, the program returns a range of numbers from the inputted number to 0
+* If the user clicks the Count Down! button, the program returns a range of numbers from the inputted number to 0
   - Input: 4
   - Output: 4, 3, 2, 1, 0
 
@@ -29,13 +29,13 @@ You can view it here: https://heyimmatt.github.io/mr-roboger
   - Input: 4
   - Output: 0, 1, 2, "Won't you be my neighbor?", 4
 
-* Numbers that contain a 2 display "Boop" instead of the number
+* Numbers that contain a 2 display "Boop!" instead of the number
   - Input: 4
-  - Output: 0, 1, "Boop", 3, 4
+  - Output: 0, 1, "Boop!", 3, 4
 
-* Numbers that contain a 1 display "Beep" instead of the number
+* Numbers that contain a 1 display "Beep!" instead of the number
   - Input: 4
-  - Output: 0, "Beep", 2, 3, 4
+  - Output: 0, "Beep!", 2, 3, 4
 
 * The user's name will be displayed in the "Won't you be my neighbor?" ouput
   - Input: 4
