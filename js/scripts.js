@@ -1,6 +1,5 @@
 function robogerize(num, name, order) {
   let outputArr = [];
-
   if (order === 'ascending') {
     if (num > 0) {
       for (let i = 0; i <= num; i++) {
@@ -48,19 +47,29 @@ document.querySelectorAll('button').forEach((button) => {
   button.addEventListener('click', (event) => {
     event.preventDefault();
     document.getElementById('output').innerHTML = '';
+    const numField = document.getElementById('num-input');
+    const nameField = document.getElementById('name');
 
-    const num = parseInt(document.getElementById('num-input').value);
-    const name = document.getElementById('name').value;
+    const num = parseInt(numField.value);
+    const name = nameField.value;
     const order = event.target.id;
 
-    if (!num || !name) {
-      alert('Please fill out the fields!');
-    } else {
+    if (num && name) {
+      numField.classList = 'form-control';
+      nameField.classList = 'form-control';
       document.getElementById('loader').hidden = false;
       setTimeout(() => {
         document.getElementById('loader').hidden = true;
         robogerize(num, name, order);
-      }, 5000)
+      }, 4000);
+    } else if (!num || !name) {
+      alert('Please fill out the fields!');
+      if (!num) {
+        numField.classList = 'form-control is-invalid';
+      } else if (!name) {
+        numField.classList = 'form-control';
+        nameField.classList = 'form-control is-invalid';
+      }
     }
   });
 });
