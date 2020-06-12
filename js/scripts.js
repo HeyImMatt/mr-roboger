@@ -1,6 +1,6 @@
 function robogerize(num, name, order) {
   let outputArr = [];
-  
+
   if (order === 'ascending') {
     if (num > 0) {
       for (let i = 0; i <= num; i++) {
@@ -55,6 +55,12 @@ document.querySelectorAll('button').forEach((button) => {
 
     if (!num || !name) {
       alert('Please fill out the fields!');
-    } else robogerize(num, name, order);
+    } else {
+      document.getElementById('loader').hidden = false;
+      setTimeout(() => {
+        document.getElementById('loader').hidden = true;
+        robogerize(num, name, order);
+      }, 5000)
+    }
   });
 });
