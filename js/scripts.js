@@ -1,3 +1,12 @@
+function robogerize(num, name) {
+  displayResults(num, name)
+}
+
+function displayResults(nums, name) {
+  const outputDiv = document.getElementById('output');
+  outputDiv.append(`${nums}`);
+}
+
 document.querySelectorAll('button').forEach((button) => {
   button.addEventListener('click', (event => {
     event.preventDefault();
@@ -8,7 +17,3 @@ document.querySelectorAll('button').forEach((button) => {
     } else robogerize(num, name)
   }));
 });
-
-function robogerize(num, name) {
-  console.log(num, name)
-}
